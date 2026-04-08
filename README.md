@@ -20,20 +20,28 @@ A premium parking lot management system built with the MERN stack (Node.js, Expr
 - **Backend**: Node.js, Express, better-sqlite3 (SQL).
 - **Styling**: Vanilla CSS with modern aesthetics.
 
-## 🌍 Deployment (Render.com)
+## 🌍 Deployment (Render.com Free Tier)
 
-This project is configured as a monolith for easy deployment:
+This project is now optimized for Render's free tier using **PostgreSQL**:
 
-1. **Create Account**: Sign up at [Render.com](https://render.com).
-2. **New Web Service**: Connect your GitHub repository.
-3. **Settings**:
-   - **Build Command**: `npm install && npm run build`
-   - **Start Command**: `npm start`
-4. **Persistence (Crucial)**:
-   - Go to **Advanced**.
-   - Add a **Disk**.
-   - Name: `parking-db` | Mount Path: `/var/data` | Size: `1 GB`.
-   - Add **Environment Variable**: `DB_PATH` = `/var/data/parking.db`.
+1. **Database Setup**: 
+   - Create a free account at **[Neon.tech](https://neon.tech)** or **[Supabase](https://supabase.com)**.
+   - Create a new project and copy your **Connection String** (`postgres://...`).
+2. **Deploy on Render**:
+   - Sign up at [Render.com](https://render.com).
+   - Click **"New"** > **"Web Service"** and connect your GitHub repo.
+   - **Settings**:
+     - **Build Command**: `npm install && npm run build`
+     - **Start Command**: `npm start`
+3. **Environment Variables**:
+   - Go to **Environment** in Render.
+   - Add a secret: `DATABASE_URL` = (Your Connection String from step 1).
+
+## 📦 Local Setup
+
+1. **Install Dependencies**: `npm install`
+2. **env File**: Create a `.env` in the root with `DATABASE_URL=your_postgres_url`.
+3. **Build & Start**: `npm run build && npm start`
 
 ## 📦 Local Setup
 
