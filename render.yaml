@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: parkease-system
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DB_PATH
+        value: /var/data/parking.db
+      - key: NODE_VERSION
+        value: 18.0.0
+    disk:
+      name: parking-data
+      mountPath: /var/data
+      sizeGB: 1

@@ -20,23 +20,26 @@ A premium parking lot management system built with the MERN stack (Node.js, Expr
 - **Backend**: Node.js, Express, better-sqlite3 (SQL).
 - **Styling**: Vanilla CSS with modern aesthetics.
 
-## 📦 Installation & Setup
+## 🌍 Deployment (Render.com)
 
-### 1. Backend
-```bash
-cd backend
-npm install
-node index.js
-```
-Runs on `http://localhost:5000`.
+This project is configured as a monolith for easy deployment:
 
-### 2. Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Runs on `http://localhost:3000`.
+1. **Create Account**: Sign up at [Render.com](https://render.com).
+2. **New Web Service**: Connect your GitHub repository.
+3. **Settings**:
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+4. **Persistence (Crucial)**:
+   - Go to **Advanced**.
+   - Add a **Disk**.
+   - Name: `parking-db` | Mount Path: `/var/data` | Size: `1 GB`.
+   - Add **Environment Variable**: `DB_PATH` = `/var/data/parking.db`.
+
+## 📦 Local Setup
+
+1. **Install Dependencies**: `npm install`
+2. **Build**: `npm run build`
+3. **Start**: `npm start`
 
 ## ⚙️ Assumptions
 - **Fixed slots**: Bike: 5, Car: 5, Truck: 2.
